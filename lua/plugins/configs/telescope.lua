@@ -7,6 +7,11 @@ return {
     local actions = require("telescope.actions")
     telescope.setup({
       defaults = {
+        vimgrep_arguments = {
+          'rg', '--color=never', '--no-heading', '--with-filename',
+          '--line-number', '--column', '--smart-case',
+          '--hidden', '--glob', '!.git/',
+        },
         mappings = {
           i = {
             ["<C-k>"] = actions.move_selection_previous,
